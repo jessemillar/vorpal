@@ -22,6 +22,10 @@ function parse (event) {
 	// console.log(command, command_parts);
 }
 
+function get_cursor_position () {
+	return terminal.value.slice(terminal.value.lastIndexOf('\n') + 1, terminal.selectionStart).length - bash_prompt.length;
+}
+
 function log_command (command) {
 	command_history.push(command);
 }
