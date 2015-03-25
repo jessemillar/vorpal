@@ -26,20 +26,35 @@ function key_event (event) {
 }
 
 	function filter_keys (event) {
-		var key = event.keyCode;
-
-		if (key == 13) // Enter
+		if (check_for_key(13, event)) // Enter
 		{
 			prevent_key(event);
 
 			parse();
 		}
 
-		if (key == 38) // Up arrow
+		if (check_for_key(38, event)) // Up arrow
 		{
 			prevent_key(event);
 		}
 	}
+
+		function check_for_key (key_code, event) {
+			console.log(event.keyCode);
+
+			if (event.keyCode == key_code)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+			// function check_for_shortcut (event, key_code_a, key_code_b) {
+			// 	if (event.keyCode)
+			// }
 
 		function prevent_key (event) {
 			event.preventDefault();
@@ -54,8 +69,14 @@ function key_event (event) {
 			if (command_parts[0] == 'ssh')
 			{
 				ssh(command_parts[1]);
+
+				wait_for_input(event);
 			}
 		}
+
+			function wait_for_input (event) {
+				// body...
+			}
 
 function ssh (command) {
 	var parts = command.split('@');
