@@ -2,8 +2,11 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body onload = "init()">
-	<textarea id = "terminal" spellcheck = "false" onkeydown = "key_event(event)"></textarea>
+<body onload = "init()" onkeydown = "key_event(event)" onkeyup="update_output()">
+	<input id = "command_input" class = "hidden_input" type = "text">
+	<input id = "response_input" class = "hidden_input" type = "text">
+
+	<textarea id = "terminal" spellcheck = "false" onclick = "grab_focus()"></textarea>
 </body>
 
 <script type="text/javascript" src="data/database.js"></script>

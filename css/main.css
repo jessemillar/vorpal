@@ -14,8 +14,18 @@ body {
 	background-color: rgba(0, 0, 0, 0);
 	border: none;
 	color: #01FF70;
-	font-family: "Courier New", Courier, monospace;
+	font-family: "Monaco", "Courier New", Courier, monospace;
 	font-size: 12px;
 	outline: none;
 	resize: none;
+}
+
+.hidden_input {
+	position: absolute;
+	left: -100px;
+	top: -100px;
+	width: 1px;
+	height: 1px;
+
+	opacity: 0;
 }
