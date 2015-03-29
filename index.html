@@ -3,10 +3,26 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body onload = "init()" onkeydown = "key_event(event)" onkeyup="update_output()">
+	<!-- Secret stuff -->
 	<input id = "command_input" class = "hidden_input" type = "text">
 	<input id = "response_input" class = "hidden_input" type = "text">
 
-	<textarea id = "terminal" spellcheck = "false" onclick = "grab_focus()"></textarea>
+	<div id = "menubar">
+		<div id = "security_status">
+			Test
+		</div>
+	</div>
+
+	<div class = "window" style = "position: absolute; left: 100px; top: 100px; width: 300px; height: 250px;"> <!-- Size just for testing -->
+		<div class = "topbar">
+			<div class = "title">Testing</div>
+			<div class = "primary button">x</div>
+			<div class = "secondary button">-</div>
+		</div>
+		<div class = "content">
+			<textarea id = "terminal" spellcheck = "false" onclick = "grab_focus()"></textarea>
+		</div>
+	</div>
 </body>
 
 <script type="text/javascript" src="data/database.js"></script>

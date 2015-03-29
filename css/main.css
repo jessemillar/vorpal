@@ -1,26 +1,98 @@
 body {
-	background-color: #111111;
+	background-color: #091627;
+	font-family: "Monaco", "Courier New", Courier, monospace;
+	font-size: 12px;
 }
 
-#terminal {
-	position: absolute;
-	left: 0px;
-	top: 0px;
+textarea {
 	width: 100%;
 	height: 100%;
 
-	padding: 15px;
+	padding: 5px;
 
-	background-color: rgba(0, 0, 0, 0);
+	background-color: #091627;
 	border: none;
-	color: #01FF70;
+	color: #77d3b6;
 	font-family: "Monaco", "Courier New", Courier, monospace;
 	font-size: 12px;
 	outline: none;
 	resize: none;
 }
 
-.hidden_input {
+#menubar {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 30px;
+
+	background-color: #77d3b6;
+	line-height: 30px;
+}
+
+	#menubar .status {
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		width: 33%;
+		height: 100%;
+
+		color: #091627;
+		text-align: center;
+	}
+
+.window {
+	border: solid 2px #77d3b6;
+}
+
+	.window .topbar {
+		width: calc(100% - 2px);
+		height: 16px;
+
+		padding: 2px;
+
+		background-color: #62c693;
+	}
+
+		.topbar .title {
+			width: 100%;
+
+			color: #091627;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.topbar .button {
+			width: 10px;
+			height: 10px;
+
+			background-color: #77d3b6;
+			border: solid 2px #091627;
+			cursor: pointer;
+			line-height: 10px;
+			text-align: center;
+		}
+
+			.topbar .primary {
+				position: absolute;
+				left: 2px;
+				top: 2px;
+			}
+
+			.topbar .secondary {
+				position: absolute;
+				left: 18px;
+				top: 2px;
+			}
+
+	.window .content {
+		width: 100%;
+		height: calc(100% - 20px); /* This is the height of topbar */
+
+		background-color: #091627;
+	}
+
+.hidden_input { /* For interfacing with the terminal */
 	position: absolute;
 	left: -100px;
 	top: -100px;
