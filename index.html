@@ -1,23 +1,26 @@
 <html>
 <head>
-	<title>toveOS</title>
+	<title>vorpalOS</title>
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body onload="init()" onkeydown="key_event(event)" onkeyup="update_output()" onmousemove="drag(event)" onmouseup="deselect_drag()">
+<body onload="terminal.init()" onkeydown = "controller.filter(event)" onmousemove="dragger.drag(event)" onmouseup="dragger.deselect()">
 	<!-- Secret stuff -->
-	<input id="command_input" class="hidden_input" type="text">
-	<input id="response_input" class="hidden_input" type="text">
+	<input id="command_input" class="hidden_input" type="text" onkeydown="terminal.key(event)" onkeyup="terminal.update()">
+	<input id="response_input" class="hidden_input" type="text" onkeydown="terminal.key(event)" onkeyup="terminal.update()">
 
 	<div id="menubar">
+		<div id = "menu">
+			Vorpal
+		</div>
 		<div id="security_status">
-			Test
+			Secure
 		</div>
 	</div>
 
-	<div class="window" onclick="grab_focus()" style="position: absolute; left: 100px; top: 100px; width: 300px; height: 250px;"> <!-- Size just for testing -->
-		<div class="topbar" onmousedown="select_drag(this, event)">
-			<div class="title">Testing</div>
+	<div class="window" onclick="terminal.focus()" style="position: absolute; left: 100px; top: 100px; width: 400px; height: 300px;"> <!-- Size just for testing -->
+		<div class="topbar" onmousedown="dragger.select(this, event)">
+			<div class="title">mobileTerm</div>
 			<div class="primary button"></div>
 			<div class="secondary button"></div>
 		</div>
@@ -27,8 +30,13 @@
 	</div>
 </body>
 
-<script type="text/javascript" src="data/database.js"></script>
 <script type="text/javascript" src="scripts/main.js"></script>
+
+<script type="text/javascript" src="data/database.js"></script>
+
 <script type="text/javascript" src="scripts/ui.js"></script>
+
+<script type="text/javascript" src="scripts/terminal.js"></script>
+<script type="text/javascript" src="scripts/commands/ssh.js"></script>
 
 </html>

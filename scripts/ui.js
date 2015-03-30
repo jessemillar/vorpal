@@ -1,38 +1,43 @@
-var drag_target;
+var dragger = new function() {
+    this.target;
 
-var mouse_x;
-var mouse_y;
+    this.mouse = new Object();
+        this.mouse.x;
+        this.mouse.y;
 
-var div_left;
-var div_top;
+    this.div = new Object();
+        this.div.x;
+        this.div.y;
 
-var difference_x;
-var difference_y;
+    this.difference = new Object();
+        this.difference.x;
+        this.difference.y;
 
-function select_drag (div, event) {
-    drag_target = div.parentNode;
+    this.select = function(div, event) {
+        this.target = div.parentNode;
 
-    mouse_x = event.clientX;
-    mouse_y = event.clientY;
+        this.mouse.x = event.clientX;
+        this.mouse.y = event.clientY;
 
-    div_left = parseInt(drag_target.style.left);
-    div_top = parseInt(drag_target.style.top);
+        this.div.x = parseInt(this.target.style.left);
+        this.div.y = parseInt(this.target.style.top);
 
-    difference_x = mouse_x - div_left;
-    difference_y = mouse_y - div_top;
-}
+        this.difference.x = this.mouse.x - this.div.x;
+        this.difference.y = this.mouse.y - this.div.y;
+    }
 
-function deselect_drag () {
-    drag_target = null;
-}
+    this.deselect = function() {
+        this.target = null;
+    }
 
-function drag (event) {
-    if (drag_target)
-    {
-        mouse_x = event.clientX;
-        mouse_y = event.clientY;
-        
-        drag_target.style.left = mouse_x - difference_x + 'px';
-        drag_target.style.top = mouse_y - difference_y + 'px';
+    this.drag = function(event) {
+        if (this.target)
+        {
+            this.mouse.x = event.clientX;
+            this.mouse.y = event.clientY;
+            
+            this.target.style.left = this.mouse.x - this.difference.x + 'px';
+            this.target.style.top = this.mouse.y - this.difference.y + 'px';
+        }
     }
 }
