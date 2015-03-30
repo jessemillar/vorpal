@@ -2,6 +2,12 @@ body {
 	background-color: #091627;
 	font-family: "Monaco", "Courier New", Courier, monospace;
 	font-size: 12px;
+    user-select: none;
+    	-webkit-touch-callout: none;
+	    -webkit-user-select: none;
+	    -khtml-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
 }
 
 textarea {
@@ -51,7 +57,7 @@ textarea {
 
 		padding: 2px;
 
-		background-color: #62c693;
+		background-color: #77d3b6;
 	}
 
 		.topbar .title {

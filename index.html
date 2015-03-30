@@ -1,31 +1,34 @@
 <html>
 <head>
+	<title>toveOS</title>
+
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body onload = "init()" onkeydown = "key_event(event)" onkeyup="update_output()">
+<body onload="init()" onkeydown="key_event(event)" onkeyup="update_output()" onmousemove="drag(event)" onmouseup="deselect_drag()">
 	<!-- Secret stuff -->
-	<input id = "command_input" class = "hidden_input" type = "text">
-	<input id = "response_input" class = "hidden_input" type = "text">
+	<input id="command_input" class="hidden_input" type="text">
+	<input id="response_input" class="hidden_input" type="text">
 
-	<div id = "menubar">
-		<div id = "security_status">
+	<div id="menubar">
+		<div id="security_status">
 			Test
 		</div>
 	</div>
 
-	<div class = "window" style = "position: absolute; left: 100px; top: 100px; width: 300px; height: 250px;"> <!-- Size just for testing -->
-		<div class = "topbar">
-			<div class = "title">Testing</div>
-			<div class = "primary button">x</div>
-			<div class = "secondary button">-</div>
+	<div class="window" onclick="grab_focus()" style="position: absolute; left: 100px; top: 100px; width: 300px; height: 250px;"> <!-- Size just for testing -->
+		<div class="topbar" onmousedown="select_drag(this, event)">
+			<div class="title">Testing</div>
+			<div class="primary button"></div>
+			<div class="secondary button"></div>
 		</div>
-		<div class = "content">
-			<textarea id = "terminal" spellcheck = "false" onclick = "grab_focus()"></textarea>
+		<div class="content">
+			<textarea id="terminal" spellcheck="false"></textarea>
 		</div>
 	</div>
 </body>
 
 <script type="text/javascript" src="data/database.js"></script>
 <script type="text/javascript" src="scripts/main.js"></script>
+<script type="text/javascript" src="scripts/ui.js"></script>
 
 </html>

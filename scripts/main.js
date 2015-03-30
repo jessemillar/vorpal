@@ -3,7 +3,7 @@
 
 var command_history = new Array();
 
-var bash_prompt = 'cursOS: ~user$ ';
+var bash_prompt = 'toveOS: ~user$ ';
 var block_character = String.fromCharCode(9616);
 var response_prefix = '';
 
