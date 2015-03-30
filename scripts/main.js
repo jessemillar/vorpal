@@ -6,4 +6,17 @@ var controller = new function() {
 			event.preventDefault();
 		}
 	}
+
+	this.clock = function() {
+		// Run once
+		var time = new Date();
+
+		document.getElementById('clock').innerHTML = time;
+
+		setInterval(function() { // Run every second
+			var time = new Date();
+
+			document.getElementById('clock').innerHTML = time;
+		}, 1000);
+	}
 }

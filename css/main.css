@@ -1,5 +1,9 @@
 body {
+	padding: 0px;
+	margin: 0px;
+
 	background-color: #091627;
+	border: solid 4px #77d3b6;
 	font-family: "Monaco", "Courier New", Courier, monospace;
 	font-size: 12px;
     user-select: none;
@@ -19,33 +23,56 @@ textarea {
 	background-color: #091627;
 	border: none;
 	color: #77d3b6;
+	cursor: default;
 	font-family: "Monaco", "Courier New", Courier, monospace;
 	font-size: 12px;
 	outline: none;
 	resize: none;
 }
 
-#menubar {
+#clock {
 	position: absolute;
 	left: 0px;
 	top: 0px;
+	width: 20%;
+
+	min-width: 100px;
+
+	padding: 10px;
+
+	color: #77d3b6;
+	text-align: left;
+}
+
+#menubar {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
 	width: 100%;
 	height: 30px;
 
-	background-color: #77d3b6;
-	line-height: 30px;
+	border-top: solid 4px #77d3b6;
+	line-height: 26px;
 }
 
-	#menubar .status {
-		position: absolute;
-		right: 0px;
-		top: 0px;
-		width: 33%;
-		height: 100%;
-
-		color: #091627;
+	#menubar .section {
+		color: #77d3b6;
 		text-align: center;
 	}
+
+		#menubar .right {
+			border-left: solid 4px #77d3b6;
+		}
+
+			#menubar #status {
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				width: 25%;
+				height: 100%;
+
+				min-width: 150px;
+			}
 
 .window {
 	border: solid 2px #77d3b6;
@@ -97,6 +124,14 @@ textarea {
 
 		background-color: #091627;
 	}
+
+		.window #terminal_mask {
+			position: absolute;
+			left: 0px;
+			top: 20px;
+			width: 100%;
+			height: calc(100% - 20px);
+		}
 
 .hidden_input { /* For interfacing with the terminal */
 	position: absolute;

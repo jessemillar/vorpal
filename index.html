@@ -4,17 +4,16 @@
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body onload="terminal.init()" onkeydown = "controller.filter(event)" onmousemove="dragger.drag(event)" onmouseup="dragger.deselect()">
+<body onload="controller.clock(); terminal.init()" onkeydown = "controller.filter(event)" onmousemove="dragger.drag(event)" onmouseup="dragger.deselect()">
 	<!-- Secret stuff -->
 	<input id="command_input" class="hidden_input" type="text" onkeydown="terminal.key(event)" onkeyup="terminal.update()">
 	<input id="response_input" class="hidden_input" type="text" onkeydown="terminal.key(event)" onkeyup="terminal.update()">
 
+	<div id = "clock"></div>
+
 	<div id="menubar">
-		<div id = "menu">
-			Vorpal
-		</div>
-		<div id="security_status">
-			Secure
+		<div id = "status" class = "right section">
+			Status: Secure
 		</div>
 	</div>
 
@@ -22,9 +21,10 @@
 		<div class="topbar" onmousedown="dragger.select(this, event)">
 			<div class="title">mobileTerm</div>
 			<div class="primary button"></div>
-			<div class="secondary button"></div>
+			<!-- <div class="secondary button"></div> -->
 		</div>
 		<div class="content">
+			<div id = "terminal_mask"></div>
 			<textarea id="terminal" spellcheck="false"></textarea>
 		</div>
 	</div>

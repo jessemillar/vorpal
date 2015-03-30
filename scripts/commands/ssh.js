@@ -12,7 +12,7 @@ terminal.commands.ssh = function(command) {
 		}
 		else if (i == database.ssh.sites.length - 1)
 		{
-			terminal.textarea.value += '\nServer is unresponsive\n';
+			terminal.textarea.value += '\nServer unresponsive\n';
 
 			terminal.switch.command();
 		}
